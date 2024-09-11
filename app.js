@@ -11,17 +11,17 @@ import messageRouter from "./routes/messageRouter.js";
 import skillRouter from "./routes/skillRouter.js";
 import softwareApplicationRouter from "./routes/softwareApplicationRouter.js";
 import projectRouter from "./routes/projectRouter.js";
-
 const app = express();
 dotenv.config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [process.env.PORTFOLIO_URL, process.env.DASHBOARD_URL],
+    origin:[process.env.PORTFOLIO_URL,process.env.DASHBOARD_URL,'https://fahim-ahmed-portfolio.netlify.app/','https://fahim-ahmd-portfolio-dashboard.netlify.app/'],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 app.use(cookieParser());
 app.use(express.json());
