@@ -16,12 +16,14 @@ dotenv.config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin:[process.env.PORTFOLIO_URL,process.env.DASHBOARD_URL,'https://portfolio-frontend-pink.vercel.app/','https://fahim-ahmd-portfolio-dashboard.netlify.app'],
+    origin:[process.env.PORTFOLIO_URL,process.env.DASHBOARD_URL,process.env.LOCAL_PORTFOLIO_URL,process.env.LOCAL_DASHBOARD_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
-
+app.get('/api/v1/timeline/getall', (req, res) => {
+  // Your route logic here
+});
 
 app.use(cookieParser());
 app.use(express.json());
