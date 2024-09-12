@@ -21,9 +21,6 @@ app.use(
     credentials: true,
   })
 );
-app.get('/api/v1/timeline/getall', (req, res) => {
-  // Your route logic here
-});
 
 app.use(cookieParser());
 app.use(express.json());
